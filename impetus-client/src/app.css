@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+h1 {
+	@apply mb-2 text-2xl font-medium;
+}
+
+body {
+	@apply relative flex min-h-screen min-w-screen items-center justify-center overflow-hidden bg-gray-950 font-light tracking-wider text-white select-none;
+}
+
+button {
+	@apply cursor-pointer;
+}
+
+body::before {
+	@apply pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[25%] blur-3xl;
+	content: '';
+	transform: translateY(50%);
+	background: radial-gradient(ellipse at center, #5dd6f588 0%, #4eb5cf44 50%, transparent 100%);
+	animation: torch-light 1s infinite alternate;
+}
+
+body::after {
+	@apply pointer-events-none absolute inset-x-0 bottom-2 z-1 text-center text-sm text-white opacity-20;
+	content: 'Impetus Client v2025.05.08 // Made by Fayçal Beghalia';
+}
+
+@keyframes torch-light {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.8;
+	}
+}
+
+.loading-animation {
+	animation: torch-light 1s infinite alternate;
+}
+
+.info-title {
+	@apply mb-4 text-center text-lg font-bold uppercase;
+}
+
+.info-message {
+	@apply text-center text-sm opacity-80;
+}
+
+.info-button {
+	@apply mt-4 border border-white/50 px-4 py-2 text-sm transition-colors hover:border-white;
+}
+
+section {
+	@apply absolute inset-0 flex items-center justify-center;
+}
